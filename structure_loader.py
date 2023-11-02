@@ -89,3 +89,35 @@ def load_structure(file_path):
     else:
         raise ValueError(f"Unsupported file extension: {file_extension}")
     return structure
+
+def load_structures_from_folder(folder_path):
+        """
+        Load all crystal structures from files in a folder.
+
+        Args:
+            folder_path (str): The path to the folder containing the crystal structure files.
+
+        Returns:
+            list: A list of pymatgen Structure objects representing the crystal structures.
+
+        Raises:
+            ValueError: If no supported files are found in the folder.
+
+        Example:
+            >>> structures = load_structures_from_folder('/path/to/folder')
+            >>> print(len(structures))
+            3
+        """
+
+        supported_extensions = [".cif", ".in", ".vasp"]
+        structures = []
+        for file_name in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, file_name)
+            file_extension = os.path.splitext(file_path)[1]
+            if file_extension in supported_extensions:
+                structure = load_structure(file_path)
+                structures.append(structure)
+        if not structures:
+            raise ValueError(f"No supported files found in folder: {folder_path}")
+        return structures
+
