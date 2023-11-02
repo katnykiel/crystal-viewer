@@ -1,0 +1,38 @@
+&CONTROL
+  calculation = 'vc-relax',
+  outdir = './',
+  pseudo_dir = './pseudo/pseudo_PAW/',
+  tstress = .TRUE.,
+/
+&SYSTEM
+  ecutwfc = 50,
+  ibrav = 0,
+  nat = 7,
+  ntyp = 3,
+/
+&ELECTRONS
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+  C  12.0107 C.upf
+  O  15.9994 O.upf
+  Ti  47.8670 Ti.upf
+ATOMIC_POSITIONS (crystal)
+  Ti       0.666667000   0.333333000   0.326623379
+  Ti       0.333333000   0.666667000   0.673376621
+  Ti      -0.000000000  -0.000000000   0.500000000
+  C        0.333333000   0.666667000   0.418006988
+  C        0.666667000   0.333333000   0.581993012
+  O        0.333333000   0.666667000   0.261205357
+  O        0.666667000   0.333333000   0.738794643
+K_POINTS automatic
+  3 3 3 0 0 0
+CELL_PARAMETERS (angstrom)
+   1.519306316  -2.631514017  -0.000000000
+   1.519306316   2.631514017   0.000000000
+  -0.000000000  -0.000000000  14.905657660
+
+  
