@@ -2,6 +2,8 @@
 
 This project is a simple application for visualizing crystal structures. It uses the `pymatgen` library to load crystal structures from files and the `crystal_toolkit` library to create an interactive 3D visualization of the structure.
 
+![demo](image.png)
+
 ## Installation
 
 First, clone this git repository.
